@@ -1,0 +1,190 @@
+Q1. WAP to Input String and find the following operation it using inbuilt function
+
+1.	Convert lower case string to upper case 
+
+2.	Find the index of particular word like as suppose you have to good morning india string you have to find the index of morning 
+
+3.	Extract the string between two indexes suppose consider you have to string good morning india and you have extract morning means you have extract             string between 5 to 12 index.
+
+4.	Split the string using space 
+
+
+
+
+Q2. WAP to create Vector with Employee object and Employee class contain id, name and salary and you have to create 5 employee objects in Vector and display it.
+
+Ans: 
+
+package AMD.org;
+import java.util.Vector;
+class employee
+{
+	private int id;
+	private String name;
+	private int sal;
+	
+	public int getId()
+	{
+		return id;
+	}
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) 
+	{
+		this.name = name;
+	}
+	public int getSal() 
+	{
+		return sal;
+	}
+	public void setSal(int sal) 
+	{
+		this.sal = sal;
+	}
+}
+
+public class employeeapplication 
+{ 
+
+	public static void main(String[] args)
+	{
+		
+		 Vector v=new Vector();      
+      
+		 employee e1=new employee();
+			     	e1.setId(1);
+				   e1.setName("abhii");
+				   e1.setSal(10000);
+
+		 employee e2=new employee();
+				e2.setId(2);
+				e2.setName("pratik");
+				e2.setSal(40000);
+
+		 employee e3=new employee();
+				e3.setId(3);
+				e3.setName("gopal");
+				e3.setSal(900000);
+
+		 employee e4=new employee();
+				e4.setId(4);
+				e4.setName("oam");
+				e4.setSal(80000000);
+				
+		employee e5=new employee();
+				e5.setId(5);
+				e5.setName("Amol");
+				e5.setSal(500000);
+
+			      v.add(e1);
+			      v.add(e2);
+			      v.add(e3);
+			      v.add(e4);
+			     v.add(e5);		     
+			      
+			      for(Object obj:v) 
+		              {
+			    	  employee emp=(employee)obj;
+			    	  System.out.println(emp.getId()+"\t"+emp.getName()+"\t"+emp.getSal());
+			      }
+}
+}
+
+
+
+Q3. WAP to create ArrayList and perform following operation on it.
+  Case 1: Add new element in ArrayList 
+  Case 2: View all elements from ArrayList
+  Case 3: Search element from ArrayList 
+  Case 4: delete element from Collection using its index.
+  Case 5: replace element on specified index in collection 
+Ans: 
+
+import java.util.*;
+public class array
+{
+public static void main(String[] args);
+{
+Scanner xyz=new Scanner(System.in);
+System.out.println("")
+arraylist al=new arraylist();
+al.add(5);
+al.add(10);
+al.add(15);
+al.add(20);
+for(object obj:al)
+{
+System.out.println(obj);
+}
+}
+}
+
+
+
+
+
+Q4. WAP to Create LinkedHashMap and store student id and student name in LinkedHashMap and perform following operation on LinkedHashMap
+Case 1: Add New Element 
+Case 2: View all elements from LinkedHashMap
+Case 3: delete student from LinkedHashMap using its id. 
+Case 4: Search Element from LinkedHashMap using its id.
+
+
+Q5. WAP to create Employee class with field id,name and salary and sort employee data by using its id using Comparable and Comparator interface.
+Ans: 
+
+
+
+Q6. WAP to create class name as Employee id, name and salary and perform serialization on Employee class and store employee objects in file.
+
+
+Q7. WAP to Create Thread and display 1 to 10 values using 10000 seconds sleep distance.
+
+Ans: 
+package AMD.org;
+import java.util.*;
+ class value extends Thread
+{
+	public void run()
+	{
+		try
+		{
+			for(int i=1;i<=10;i++)
+			{
+				System.out.println(i);
+				Thread.sleep(1000);
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println("error is"+ex);
+		}
+	}
+}
+ 
+public class threading
+{
+	public static void main(String[] args)
+	{
+		value v=new value();
+		v.start();
+	}
+
+}
+
+
+Q8. WAP to create class name Create Collection name as ArrayList and filter even data from Collection using Stream API 
+
+
+Q9. WA Code for create Employee class with id name and salary and perform object cloning using Cloneable interface?
+
+
+Q10. WAP for create class name as Employee with id, name and salary and override toString () and equals () method and compare two objects with each other and if objects are equal then generate same hashcode for object otherwise generate different hashcode for object
+
+
+

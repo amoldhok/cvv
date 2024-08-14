@@ -1,0 +1,62 @@
+package com.example.demo.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="marks")
+public class MarkModel 
+{
+	@Column(name="markid")
+private long markid;
+	
+	@Column(name="markid")
+SubjectModel Subject;
+
+	@Column(name="markid")
+StudentModel Student;
+	
+	@Column(name="markid")
+private double marks;
+
+public long getMarkid()
+{
+	return markid;
+}
+
+public void setMarkid(long markid) 
+{
+	this.markid = markid;
+}
+
+public SubjectModel getSubject() 
+{
+	return Subject;
+}
+
+public void setSubject(SubjectModel subject)
+{
+	Subject = subject;
+}
+
+public StudentModel getStudent()
+{
+	return Student;
+}
+
+public void setStudent(StudentModel student) 
+{
+	Student = student;
+}
+
+public double getMarks() 
+{
+	return marks;
+}
+
+public void setMarks(double marks) 
+{
+	this.marks = marks;
+}
+}

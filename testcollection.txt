@@ -1,0 +1,765 @@
+ we want to create Employee class with field id , name and salary and store 5 employee objects in Vector collection and display it.
+package org.techhub;
+import java.util.*;
+class Employee {
+	private int id;
+	private String name;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getSal() {
+		return sal;
+	}
+	public void setSal(int sal) {
+		this.sal = sal;
+	}
+	private int sal;
+}
+
+public class ObjArrApplication {
+	public static void main(String[] args) {
+	   
+		  Vector v = new Vector();
+	      Employee emp1 = new Employee();
+	       emp1.setId(1);
+	       emp1.setName("ABC");
+	       emp1.setSal(10000);
+	      
+	       Employee emp2 = new Employee();
+	       emp2.setId(2);
+	       emp2.setName("MNO");
+	       emp2.setSal(20000);
+	       
+	       Employee emp3 = new Employee();
+	       emp3.setId(3);
+	       emp3.setName("PQR");
+	       emp3.setSal(30000);
+	       
+	       Employee emp4 = new Employee();
+	       emp4.setId(4);
+	       emp4.setName("PQR");
+	       emp4.setSal(40000);
+	       
+	       Employee emp5 = new Employee();
+	       emp5.setId(5);
+	       emp5.setName("STV");
+	       emp5.setSal(60000);
+	       
+	      v.add(emp1); //
+	      v.add(emp2);
+	      v.add(emp3);
+	      v.add(emp4);
+	      v.add(emp5);
+	      
+	      for(Object obj:v) {
+	    	  Employee e=(Employee)obj;
+	    	  System.out.println(e.getId()+"\t"+e.getName()+"\t"+e.getSal());
+	      }
+	}
+}
+
+
+Example: we want to create Vector and store 5 Product detail in it and search product by using 
+Its id and delete it.
+package org.techhub;
+
+public class Product {
+
+	private int id;
+	private String name;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	private int price;
+
+}
+package org.techhub;
+import java.util.*;
+public class CollectionProdApplication
+{
+   public static void main(String[] args) {
+		Vector v = new Vector();
+		Scanner xyz  = new Scanner(System.in);
+		Product p[]=new Product[5]; //array of reference.
+		int prodId;
+		for(int i=0; i<p.length;i++) {
+			p[i]=new Product(); //array of object 
+			System.out.println("enter name id and price of product");
+			String name=xyz.nextLine();
+			int id=xyz.nextInt();
+			int price=xyz.nextInt();
+			xyz.nextLine();
+			p[i].setName(name);
+			p[i].setId(id);
+			p[i].setPrice(price);
+			v.add(p[i]);	
+		}
+		System.out.println("Before Deletion of Product");
+        for(Object obj:v) {
+        	Product pd=(Product)obj;
+        	System.out.println(pd.getId()+"\t"+pd.getName()+"\t"+pd.getPrice());
+        }
+		System.out.println("Enter id for search");
+		prodId=xyz.nextInt();
+		boolean flag=false;
+		for(Object obj:v) {
+			Product prod=(Product)obj;
+		    if(prod.getId()==prodId) {
+		    	v.remove(prod);
+		    	flag=true;
+		    	break;
+		    }
+		}
+		if(flag) {
+			System.out.println("Product Deleted Success.....");
+		}
+		else {
+			System.out.println("Some problem is there.........");
+		}
+		System.out.println("After Deletion of Product");
+        for(Object obj:v) {
+        	Product pd=(Product)obj;
+        	System.out.println(pd.getId()+"\t"+pd.getName()+"\t"+pd.getPrice());
+        }
+	}
+}
+
+
+
+
+
+
+
+package org.techhub;
+import java.util.*;
+public class ArrayListApp {
+  public static void main(String x[]) {
+	   ArrayList al = new ArrayList();
+	   al.add(10);
+	   al.add(20);
+	   al.add(30);
+	   al.add(40);
+	   for(Object obj:al) {
+		   System.out.println(obj);
+	   }
+  }
+}
+
+
+
+
+
+
+
+package org.techhub;
+import java.util.*;
+public class TestArrList {
+	public static void main(String[] args) {
+		Scanner xyz = new Scanner(System.in);
+		ArrayList al = new ArrayList();
+		al.add(10);
+		al.add(20);
+		al.add(30);
+		al.add(40);
+		al.add(50);
+		System.out.println("Enter value for search");
+		int value = xyz.nextInt();
+		boolean b = al.contains(value);
+		if (b) {
+			System.out.println("Value found");
+		} else {
+			System.out.println("value not found");
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package org.techhub;
+import java.util.*;
+public class LinkedListApplication {
+	public static void main(String[] args) {
+		LinkedList list = new LinkedList();
+		Employee emp1 = new Employee(1, "ABC", 10000);
+		Employee emp2 = new Employee(2, "MNO", 20000);
+		Employee emp3 = new Employee(3, "STV", 10000);
+		Employee emp4 = new Employee(4, "PQR", 20000);
+		Employee emp5 = new Employee(5, "XYZ", 40000);
+		list.add(emp1);
+		list.add(emp2);
+		list.add(emp3);
+		list.add(emp4);
+		list.add(emp5);
+		System.out.println("Display all employees");
+		for (Object obj : list) {
+			Employee emp = (Employee) obj;
+			System.out.println(emp.getId() + "\t" + emp.getName() + "\t" + emp.getSal());
+		}
+		// sorting logics
+		for (int i = 0; i < list.size(); i++) {
+			for (int j = (i + 1); j < list.size(); j++) {
+				Employee prev = (Employee) list.get(i);
+				Employee next = (Employee) list.get(j);
+				if (prev.getSal() > next.getSal()) {
+					list.set(i, next);
+					list.set(j, prev);
+				}
+			}
+		}
+		System.out.println("Display all employees Sorted By Salary");
+		int count = 0;
+		Employee e2 = null;
+		try {
+			for (int i = 0; i < (list.size()); i++) {
+				Employee e1 = (Employee) list.get(i); // 3==4
+				e2 = (Employee) list.get(i + 1);// 4+1- IndexOutOfBoundsException
+				if (e1.getSal() == e2.getSal()) {
+					++count;
+				} else {
+					++count;
+					System.out.println(e1.getSal() + "-------->" + count);
+					count = 0;
+				}
+			}
+		} catch (Exception ex) {
+			++count;
+			if (count > 1) {
+				System.out.println(e2.getSal() + "----------->" + count);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package org.techhub;
+
+import java.util.*;
+
+public class PlayerListCollectionApp {
+	public static void main(String[] args) {
+		LinkedList list = new LinkedList();
+		list.add(new Player("ABC", 1, 22, 2000));
+		list.add(new Player("PQR", 3, 25, 30000));
+		list.add(new Player("STV", 2, 38, 40000));
+		list.add(new Player("XYZ", 4, 28, 34000));
+		list.add(new Player("MNO", 5, 29, 29000));
+
+		System.out.println("display all players");
+		for (Object obj : list) {
+			Player p = (Player) obj;
+	System.out.println(p.getId() + "\t" + p.getName() + "\t" + p.getRun() + "\t" + p.getAge());
+		}
+
+		System.out.println("Best Player ");
+		for (Object obj : list) {
+			Player p = (Player) obj;
+			if (p.getAge() >= 22 && p.getAge() <= 25) {
+				if (p.getRun() >= 30000) {
+System.out.println(p.getId() + "\t" + p.getName() + "\t" + p.getRun() + "\t" + p.getAge()+"*****");
+
+				} else {
+	System.out.println(p.getId() + "\t" + p.getName() + "\t" + p.getRun() + "\t" + p.getAge());
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package org.techhub;
+import java.util.*;
+public class HashSetApplication {
+	public static void main(String[] args) {
+		HashSet hs = new HashSet();
+		hs.add(10);
+		hs.add(5);
+		hs.add(33);
+		hs.add(22);
+		hs.add(33);
+		hs.add(45);
+		hs.add(300);
+		hs.add(60);
+		hs.add(5);
+		for(Object obj:hs) {
+			System.out.println(obj);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package org.techhub.bookapp;
+import java.util.*;
+class Book{
+	private int id;
+	private String name;
+	private String author;
+	
+	public Book() {
+		
+	}
+	public Book(String name,String author,int id,int price) {
+		this.name=name;
+		this.author=author;
+		this.id=id;
+		this.price=price;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	private int price;
+	
+}
+public class BookSetApplication {
+	public static void main(String[] args) {
+		LinkedHashSet hs = new LinkedHashSet();
+	 	hs.add(new Book("ABC","MNO",1,100));
+		hs.add(new Book("PQR","STV",2,200));
+		hs.add(new Book("XYZ","POS",3,200));
+		
+		for(Object obj:hs) {
+			Book b=(Book)obj;
+			System.out.println(b.getId()+"\t"+b.getName()+"\t"+b.getAuthor()+"\t"+b.getPrice());
+		}
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package org.techhub.bookapp;
+import java.util.*;
+public class SortCollectionApp {
+	public static void main(String[] args) {
+	 ArrayList al = new ArrayList();
+	 al.add(5);
+	 al.add(10);
+	 al.add(9);
+	 al.add(22);
+	 al.add(7);
+	 System.out.println("Before Sorting");
+	 for(Object obj:al) {
+		 System.out.println(obj);
+	 }
+	 Collections.sort(al);
+	 System.out.println("After Sorting");
+	 for(Object obj:al) {
+		 System.out.println(obj);
+	 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package org.techhub;
+import java.util.*;
+public class FindMaxApp {
+	public static void main(String[] args) {
+		ArrayList al = new ArrayList();
+		al.add(10);
+		al.add(20);
+		al.add(30);
+		al.add(40);
+		al.add(50);
+		al.add(500);
+		al.add(40);
+		Object obj = Collections.max(al);
+		System.out.println("Max value from collection is "+obj);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package org.techhub;
+import java.util.*;
+class Employee {
+	private int id;
+	private String name;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getSal() {
+		return sal;
+	}
+
+	public void setSal(int sal) {
+		this.sal = sal;
+	}
+
+	private int sal;
+
+	public Employee(int id, String name, int sal) {
+		this.id = id;
+		this.name = name;
+		this.sal = sal;
+	}
+}
+
+public class EmployeeSortApplication {
+	public static void main(String[] args) {
+		ArrayList al = new ArrayList();
+		al.add(new Employee(1,"ABC",10000));
+		al.add(new Employee(2,"PQR",20000));
+		al.add(new Employee(4,"STV",10000));
+		al.add(new Employee(3,"MNO",40000));
+		System.out.println("Before Sorting");
+		for(Object obj:al) {
+			Employee e=(Employee)obj;
+		System.out.println(e.getId()+"\t"+e.getName()+"\t"+e.getSal());
+		}
+		Collections.sort(al);
+		System.out.println("After Sorting");
+		for(Object obj:al) {
+			Employee e=(Employee)obj;
+		System.out.println(e.getId()+"\t"+e.getName()+"\t"+e.getSal());
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,261 @@
+
+Basic Section
+
+Q1. WAP to input two values and consider first value as base and second value as index and calculate power of number.
+Ans:
+  
+import java.util.*;
+import java.util.Scanner;
+class squareapp
+{
+int no,square;
+public void setvalue(int no)
+{
+this.no=no;
+}
+
+int getsquare()
+{
+square=no*no;
+return square;
+}
+}
+
+public class squareapplication
+{
+public static void main(String []args)
+{ 
+squareapp s=new squareapp();
+Scanner xyz=new Scanner(System.in);
+System.out.println("enter number\n");
+int no=xyz.nextInt();
+s.setvalue(no);
+   System.out.println(s.getsquare());
+}
+}
+
+
+Q2. WAP to input create array of size five and find the max and min value from array?
+Ans: 
+
+
+import java.util.*;
+class minmax
+{
+	int a[]=new int[5];
+	Scanner xyz=new Scanner(System.in);
+	System.out.println("enter array element\n");
+	for(int i=0;i<a.length;i++)
+	{
+		int a[i]=xyz.nextInt();
+	}
+	System.out.println("display array element\n");
+	for(int i=0;i<a.length;i++)
+	{
+		System.out.println(a[i]);
+	}
+	System.out.println("max no is:");
+
+	int max=a[0];
+	for(int i=0;i<a.length;i++)
+	{
+		if(max<a[i])
+		{
+			max=a[i];
+		}
+	}
+	System.out.println("maximum number is:"+max);
+	int min=a[0];
+	for(int i=0;i<a.length;i++)
+	{
+		if(a[i]<min)
+		{
+			min=a[i];
+		}
+	}
+	System.out.println("minimum number is:"+min);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q3. WAP to input five values in array and find second highest value from array?
+
+Ans: 
+import java.util.*;
+class array
+{
+int a[]=new int [5];
+public void setvalue(int a[])
+{
+this.value=value;
+}
+public int gethighest()
+{
+return highestvalue;
+}
+
+public class secondhighest
+{
+public static void main(String[] args)
+{
+array a=new arra();
+Scanner xyz=new Scanner(System.in);
+System.out.println("enter value in array\n");
+for(int i=0;i<a.length;i++)
+{
+int a[i]=xyz.nextInt();
+}
+a.setvalue(no);
+a.gethighest();
+}
+}
+
+
+Q4. WAP to create class name as GetReverse with two methods 
+   void acceptNumber(int): this function accept number as input 
+   int getReverse(): this function is used for reverse the number and return it.
+Ans: 
+ 
+import java.util.*;
+import java.util.Scanner;
+class rev
+{
+int rem,rev,no;
+void acceptnumber(int no)
+{
+this.no=no;
+}
+int getreverse()
+{
+while(no>0)
+{
+rem=no%10;
+no=no/10;
+rev=(rev*10)+rem;
+}
+return rev;
+}
+}
+public class revapplication
+{
+public static void main(String []args)
+{
+rev r=new rev();
+Scanner xyz=new Scanner(System.in);
+System.out.println("enter number\n");
+int no=xyz.nextInt();
+r.acceptnumber(no);
+System.out.println(r.getreverse());
+}
+}
+
+
+Q5. WAP to Create class name as FindMissing with one parametarized constructor and one method 
+FindMissing(int a[]): this constructor accept array as parameter 
+int  [] getMissingElement(): this function is used for find the missing element store in new array and return it.
+
+Q6. WAP to create class name as Value with parameterized constructor and we have two child classes name as Add and Mul  with getAdd() method in Add class and getMul() in Mul class 
+If we think about above diagram we have parent class name as Value with two parameter and we have to calculate addition of two values from Add class and value of multiplication from Mul class 
+And you have to create class name as CalcApp with main method  and following perform operation 
+Case 1: Addition 
+Case 2: Multiplication
+
+Ans: 
+import java.util.*;
+class value
+{
+int a,b;
+void setvalue(int a,int b)
+{
+this.a=a;
+this.b=b;
+}
+
+class add extends value
+{ 
+int getadd()
+}
+return a+b;
+class mul extends value
+{
+int getmul()
+}
+return a*b;
+}
+public class addmul
+{
+public static void main(String[] args)
+{ 
+mul m=new mul();
+add a=new add();
+Scanner xyz=new Scanner(System.in);
+System.out.println("enter frist number\n");
+int no1=xyz.nextInt();
+System.out.println("enter second number\n");
+int no2=xyz.nextInt();
+a.setvalue(a,b);
+int result=a.getadd();
+System.out.println("addition is"+result);
+
+a.setvalue(a,b);
+int result=a.getmul();
+System.out.println("multiplication  is"+result);
+}
+}
+
+
+
+
+
+
+Q7. WAP for dynamic polymorphism using interface so you have to declare interface name as Area with method name as  
+void setValue(float …x): this function accept n parameter of type float 
+float getArea(): this method return any kind of area
+You have to declare two classes name as CircleArea and RectArea and you have to implements Area interface in it and override these two methods CircleArea class accept single parameter as radius and getArea() return area of circle  and RectArea class accept two parameter of float in setValue() function and getArea() calculate area of rectangle and return it 
+And you have one more class name as AreaCalculator with method 
+void calArea(Area area): this function accept Area interface as parameter means you can pass here CircleArea or RectArea
+You have to design class with main function name as CircleAreaApp  
+Case 1: Find Area of Circle
+Case 2: Find Area of Rectangle
+
+Q8. WAP for handle the ArrayIndexOutOfBoundsException ?
+Q9. WAP for handle the InputMismatchException?
+Q10. WAP for handle the NumberFormatException at run time?
+Q11. WAP for handle the checked exception using throws clause?
+Q12. WAP for handle the user defined exceptions using throw clause?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+

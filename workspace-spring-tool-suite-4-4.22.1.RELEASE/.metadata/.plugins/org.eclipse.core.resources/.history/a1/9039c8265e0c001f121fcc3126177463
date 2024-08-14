@@ -1,0 +1,25 @@
+package com.example.demo.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumns;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class Mark 
+{
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+private int mark;
+@ManyToOne
+@JoinColumns(name ="id")
+private Student student;
+@ManyToOne
+@JoinColumns(name = "id")
+private Subject subject;
+private int marks;
+
+
+}

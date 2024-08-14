@@ -1,0 +1,13 @@
+package com.example.demo.service;
+
+@Service
+public class Markservice
+{
+	@Autowired
+	MarkDao markDao;
+
+	public Mark saveMarks(Mark mark) {
+		return markDao.save(mark);
+	}
+
+}

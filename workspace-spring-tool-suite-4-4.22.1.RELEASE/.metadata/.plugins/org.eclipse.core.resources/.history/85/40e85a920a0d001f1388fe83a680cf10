@@ -1,0 +1,10 @@
+package com.example.demo.model;
+
+public class AdminModel
+{
+	private int id;
+	private String username;
+	private String password;
+	
+
+}

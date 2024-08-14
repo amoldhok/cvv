@@ -1,0 +1,18 @@
+package com.example.demo.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="marks")
+public class MarkModel 
+{
+private long markid;
+
+
+SubjectModel smodel;
+
+StudentModel smodel;
+
+private double marks;
+}

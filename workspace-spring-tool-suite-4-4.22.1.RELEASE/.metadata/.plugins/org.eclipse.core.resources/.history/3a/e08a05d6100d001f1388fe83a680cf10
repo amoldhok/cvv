@@ -1,0 +1,5 @@
+package com.org.student.entity;
+
+public class Mark {
+
+}

@@ -1,0 +1,20 @@
+package com.example.demo.service;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.org.student.dao.StudentDao;
+import com.org.student.entity.Student;
+
+@Service
+public class Studentservices {
+
+	@Autowired
+	StudentService studentDao;
+
+	public StudentService saveStudent(StudentService student) {
+		return student.save(student);
+	}
+
+}

@@ -1,0 +1,2024 @@
+                               ********CORE JAVA*********
+Q. what is java?
+Ans:- java is pure object oriented language. We have two type of object oriented language,
+Semi object oriented : those language work with object oriented language as well as procedural oriented language called as semi object oriented language.
+Pure object oriented: those language work with pure object oriented programming concept called as pure object oriented language.
+Feature of java:-
+Platform independent  :- means java generate byte code and byte code is machine independent code means byte code can run on any operating system. 
+Robust and secure  :- 
+Simple and Easy to Learn.
+Object-Oriented Programming.
+Platform Independence.
+Automatic Memory Management.
+Security.
+Rich API.
+Multithreading.
+High Performance.
+
+ 
+
+Q. what is difference between c++ and java.
+Ans: 
+             C++	                  JAVA
+C++ is semi object oriented language	Java is object oriented language
+C++ use pointer externally	Java use pointer internally
+C++ class is by default private	Java class by default use default access specifier
+C++ use three access specifier	Java use four access specifier
+C++ use delete operator for release memory	
+C++ use friend function	Java not use friend function
+C++ work with structure	Java doesn’t work with structure
+
+
+Q. what is JDK?
+Ans: JDK stand for java development kit , jdk is a group of software which help us to create and execute java application.
+                  
+
+                        JDK
+COMPILER                     JVM
+APPLETVIEWER           RMIREGESTRY
+
+Q. what is compiler?
+Ans: compiler is intermediate code which is use to convert source code into byte code.
+Source code--------compiler--------byte code
+Q. what is byte code?
+Ans: byte code is machine understandable code ,intermediate code which easily convert into machine code with the help of JVM . 
+Importance of byte code is:- byte code is machine independent code which is easily convert into machine code with the help of JVM due to machine independent we can run on any operating system.
+Q. why java developed byte code?
+Ans: byte code is platform independent code where platform means operating system . means once we create byte code we execute it on any operating system.
+
+Q. what is JVM?
+Ans:- jvm stand for java virtual machine it is use to convert byte code into machine code and it is present in JDK or JRE.
+Q. what is access specifier?
+Ans:- access specifier are some keyword which is use for restriction on class and its member.
+There are four type of access specifier in java.
+1. public: we can use public access specifier in same class or outside of class and  same package or outside of package.
+2. private: private access specifier is use for restriction on class .
+3. protected:- protected access specifier is use for restrict on class use only for child class , not outside of class using object.
+4. default :- default access specifier means member can access outside of class but same package.
+It is package level access specifier. 
+
+*********ARRAY*********
+Q. what is array?
+Ans: array is collection of similar types of data type.
+
+Q. write a program to input five element in array and display it.
+Ans: 
+package corejavtechhub;
+import java.util.*;
+public class arrayapplication
+{
+	public static void main(String[] args)
+	{
+	int a[]=new int[5];
+	Scanner xyz=new Scanner(System.in);
+	System.out.println("enter five element in array\n");
+	for(int i=0;i<a.length;i++)
+	{
+		a[i]=xyz.nextInt();
+	}
+	System.out.printf("display array element\n");
+	for(int i=0;i<a.length;i++)
+	{
+		System.out.printf("%d\t",a[i]);
+	}
+	}
+}
+
+
+
+Q. what is linear search?
+Ans: linear  search means compare every element with every value in array .
+ Q. Binary search algorithm?
+Ans: binary search algorithm can apply on sorted array.
+Q. sub array and sequence?
+Ans: sub array means array inside another array called as subarray. sub array is a continuous part of array .
+
+Q. what is anonymous array in java?
+Ans: array without reference called as anonymous array.
+
+Q. write a program to create size of five and input value and find pair of index whose sum is equal to input value.
+Ans:
+
+Q. Stack and queue implementation?
+Ans: stack and queue are the implementation of data structure .
+Stack: stack is linear data structure means we can insert and delete data at one end , stack manage data in last in first out .stack contain one pointer name as top of stack which is used for insert and delete data.
+Stack is single ended data structure.
+There are two way to implement stack.
+1.by using array
+2.by using linked list
+
+Operation on stack:
+1.push : push operation means insert element in stack when we insert element in stack top of stack increase by 1.
+Initial value of stack is -1.
+When stack is full and we try to insert element in stack then stack overflow means no space to store element in stack. 
+2.pop: pop operation is used for remove element from stack when we remove data from stack top of stack is decrease by 1. When top of stack is decrease by 1 then stack underflow.
+
+Q. we have stack with size 3 and store data in stack and perform push and pop operation .
+Ans: 
+package corejavtechhub;
+import java.util.*;
+public class stackapp
+{
+	static int top=-1;
+	static int a[]=new int[5];
+	public static void main(String[] args) 
+	{
+		Scanner xyz=new Scanner(System.in);
+		do
+		{
+			System.out.println("1:push\n");
+			System.out.println("2:Display\n");
+			System.out.println("3:pop\n");
+			System.out.println("enter your choice\n");
+			int choice=xyz.nextInt();
+			switch(choice)
+			{
+			case 1:
+				System.out.println("enter value in stack\n");
+				int value=xyz.nextInt();
+				boolean b=push(a,value);
+				if(b)
+				{
+					System.out.println("valule store in stack");
+				}
+				else
+				{
+					System.out.println("stack is overflow");
+				}
+				break;
+			case 2:
+				display();
+				break;
+			case 3:
+				value=pop();
+				if(value!=-1)
+				{
+					System.out.println("remove value from stack"+value);
+				}
+				else
+				{
+					System.out.println("stack is empty");
+				}
+				break;
+			case 4: 
+				System.exit(0);
+				break;
+				default: System.out.println("wrong choice");
+			}
+		}
+		while(true);
+	}
+	public static boolean push(int stack[],int val)
+	{
+		if(top==(stack.length-1))
+		{
+			return false;
+		}
+		else
+		{
+			top=top+1;
+			stack[top]=val;
+		}
+		return false;
+	}
+	public static void display()
+	{
+		for(int i=top;i>=0;i--)
+		{
+			System.out.printf("stack[%d]--%d",i,a[i]);
+		}
+	}
+	public static int pop()
+	{
+		return top==-1?-1:a[top--];
+	}
+
+}
+
+
+Queue implementation of array:
+Queue is linear data structure ,  which is used for manage data in first in first out and it is two ended data structure.
+It has two pointer one is front and one is rear using rear we can insert data in queue and using front we can remove data from stack.
+We can perform operation on queue 
+1.insertion: using insertion operation we can insert data in queue when we insert data in queue then rear of queue increment by 1,
+Initial value of rear is -1.
+When rear is max-1 then no space for insert data In queue 
+2.deletion : using deletion operation we can delete data from queue at front end pointer, initial value of front is 0 when we delete value from queue then queue front increase by 1
+When rear is -1 then queue is empty
+Front ==rear+1(queue is empty)
+
+Q. write a program to show given number is Armstrong number or not?
+Ans:
+package corejavtechhub;
+import java.util.*;
+public class armstrong 
+{
+	public static void main(String[] args) 
+	{
+	int count=0,i,p,sum=0,rem,no,temp=0;
+	System.out.println("Enter the number");
+	Scanner xyz=new Scanner(System.in);
+	no=xyz.nextInt();
+	temp=no;
+	
+	while(no!=0)
+	{
+		no=no/10;
+		count++;
+	}
+	System.out.println(count);
+	no=temp;
+	while(no!=0)
+	{
+		rem=no%10;
+		i=1;
+		p=1;
+		while(i<=count)
+		{
+			p=p*rem;
+			i++;
+		}
+		
+		sum=sum+p;
+		no=no/10;
+	}
+	if(sum==temp)
+	{
+		System.out.printf("armstrong number");
+	}
+	else
+	{
+		System.out.printf("not armstrong number");
+	}
+	
+	
+	}
+	}
+
+
+
+
+Q. operation on array .
+Ans: 
+package armstrong.java;
+
+import java.util.Scanner;
+
+public class searchvalue {
+
+	public static void main(String[] args) 
+	{ 
+		int a[]=new int[5];
+		Scanner xyz=new Scanner(System.in);
+		System.out.println("enter number in array");
+		for(int i=0;i<a.length;i++)
+		{
+			a[i]=xyz.nextInt();
+		}
+	System.out.println("enter search values");
+	int svalue=xyz.nextInt();
+	int result=searchvalue(a,svalue);
+	if(result==1)
+	{
+		System.out.println("value found "+svalue);
+	}
+
+	else
+	{
+		System.out.println("value not found "+svalue);
+	}
+	}
+
+	private static int searchvalue(int[] a, int svalue)
+	{ 
+		for(int i=0;i<a.length;i++)
+		{
+			if(a[i]==svalue)
+			{
+				return 1;
+			}
+		}
+		return 0;	
+	}
+}
+
+
+
+
+Q. write a java program to print Fibonacci series?
+Ans:
+package corejavtechhub;
+import java.util.*;
+public class fibonacci 
+{
+	public static void main(String[] args) 
+	{
+		int no,i,f1=0,f2=1,fib;
+		Scanner xyz=new Scanner(System.in);
+		System.out.println("enter number\n");
+		int num=xyz.nextInt();
+		i=1;
+		while(i<num)
+		{
+			fib=f1+f2;
+			f1=f2;
+			f2=fib;
+			i++;
+			System.out.printf("%d\n",fib);
+		}
+	}
+}
+
+
+Q. write a program to perform menu driven program.
+Ans: 
+Perform prime number 
+Perform perfect number
+Perform duck number
+Perform Fibonacci series
+Ans:
+
+
+package corejavtechhub;
+import java.util.*;
+public class menudriven
+{
+
+	public static void main(String[] args)
+	{
+		Scanner xyz=new Scanner(System.in);
+		int choice,limit,sum=0;
+		System.out.println("1: print prime number\n");
+		System.out.println("2: print perfect number\n");
+		System.out.println("3: print duck number\n");
+		System.out.println("4: print Fibonacci number\n");
+		System.out.println("enter choice\n");
+		choice=xyz.nextInt();
+		System.out.println("enter limit\n");
+		limit=xyz.nextInt();
+		switch(choice)
+		{
+case 1: System.out.println("prime number");
+		for(int i=2;i<=limit;i++)
+		{
+			int flag=1;
+			for(int j=2;j<i;j++)
+			{
+				if(i%j==0)
+				{
+					flag=0;
+					break;
+				}
+			}
+			if(flag==1)
+			{
+				System.out.printf("%d",i);
+			}
+		}
+		break;
+		
+case 2: System.out.println("perfect number\n");
+		for(int i=1;i<=limit;i++)
+		{
+			sum=0;
+			for(int j=1;j<i;j++)
+			{
+				if(i%j==0)
+				{
+					sum=sum+j;
+				}
+			}
+			if(sum==i)
+			{
+				System.out.printf("%d\n",i);
+			}
+		}
+case 3: System.out.println("duck number\n");
+		for(int i=1;i<=limit;i++)
+		{
+			int rem;
+			int no=i;
+			int flag=0;
+			while(no!=0)
+			{
+				rem=no%10;
+				if(rem==0)
+				{
+					flag=1;
+					break;
+				}
+				no=no/10;
+			}
+			if(flag==1)
+			{
+				System.out.printf("%d\n",i);
+			}
+		}
+case 4: System.out.println("fibonacci series\n");
+        
+int f1=0,f2=1,fib;
+for(int i=2;i<=limit;i++)
+{
+	fib=f1+f2;
+	f1=f2;
+	f2=fib;
+	if(fib<limit)
+	{
+		System.out.printf("%d\n",fib);
+	}
+	else
+	{
+		break;
+	}
+}
+default: System.out.println("invalid input");
+		}
+		
+	}
+}
+
+**** Two dimensional array*****
+Two dimensional array is used for create matrix.
+Syntax: datatype variablename[][]=new datatype[size][size];
+Ex. Int a[][]=new int[3][3];
+Q. write a program to insert value in two dimensional array and display it.
+Ans:- 
+package corejavtechhub;
+import java.util.*;
+public class twodimensional 
+{
+	public static void main(String[] args) 
+	{
+		int a[][]=new int[2][2];
+		Scanner xyz=new Scanner(System.in);
+		System.out.println("enter value in array\n");
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=0;j<a.length;j++)
+			{
+				a[i][j]=xyz.nextInt();
+			}
+		}
+		System.out.println("display value from array\n");
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=0;j<a.length;j++)
+			{
+				System.out.printf("%d\t",a[i][j]);
+			}
+		}
+		
+	}
+
+}
+
+
+
+
+Q. what is jagged array?
+Ans: in jagged array we can create matrix of every row having different column.
+Q. write a program to perform jagged array ?
+Ans:
+package corejavtechhub;
+import java.util.*;
+public class twodimensional 
+{
+	public static void main(String[] args) 
+	{
+		
+		Scanner xyz=new Scanner(System.in);
+		int a[][]=new int[3][];
+		a[0]=new int[3];
+		a[1]=new int[4];
+		a[2]=new int[2];
+		System.out.println("enter value in array\n");
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=0;j<a[i].length;j++)
+			{
+				a[i][j]=xyz.nextInt();
+			}
+		}
+		System.out.println("display value from array\n");
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=0;j<a[i].length;j++)
+			{
+				System.out.printf("%d\t",a[i][j]);
+			}
+			System.out.printf("\n");
+		}
+		
+	}
+
+}
+
+
+
+
+Q. what is class and object?
+Ans: class is combination of state and behavior or combination of variable and function.
+Class is a combination of instance variable, class variable , method, constructor, static initializer, instance initializer, nested class.
+Instance variable: instance variable means variable declare within class without static keyword.
+Class variable: class variable means variable declare within class as static keyword.
+Method: define function within class called as method.
+Instance initializer: define block within class called as instance initializer.
+Static initializer: define static block within class called as static initializer.
+Nested class : class within class called as nested class.
+
+Q. why use class or what is benefit of class?
+Ans:  there are three benefit of class
+1.ability to store different type of data.
+package corejavtechhub;
+
+public class employee 
+{
+private int id;
+private int sal;
+private String name;
+
+public void setdetail(String name,int id,int sal)
+{
+this.name=name;
+this.id=id;
+this.sal=sal;
+}
+void show()
+{
+System.out.printf("%s %d %d",this.name,this.id,this.sal);
+}
+}
+
+
+
+2.provide reusability: means we can declare class once and use it more than one using its object.
+
+Q. what is object?
+Ans: object is block of memory where we can store class data, or object is instance of class.
+Q. how to create object in java?
+Ans: classname ref=new classname();
+Employee emp=new employee();
+Q. what is difference between reference and object?
+Ans: reference is variable which hold address of object and object is a block of memory where class data store.
+
+Q. write a program to print square of number using object?
+Ans:
+package corejavtechhub;
+import java.util.*;
+class square
+{
+	int no;
+	void setvalue(int x)
+	{
+		no=x;
+	}
+	void showsquare()
+	{
+		int sq=no*no;
+		System.out.printf("square is %d",sq);
+	}
+}
+
+public class squareapplication 
+{
+	public static void main(String []args)
+	{
+		square s=new square();
+		Scanner xyz=new Scanner(System.in);
+		System.out.println("enter number\n");
+		int no=xyz.nextInt();
+		s.setvalue(no);
+		s.showsquare();
+	
+	}
+
+}
+
+
+ Q. what happen if we not use reference with object ?
+Ans: if we not use reference with object then jvm create new  object every time in memory.
+
+Q. why use reference with object ?
+Ans:
+When we want use some object multiple time then we can use reference with object.
+
+Q. can we apply more than one reference on single object?
+Ans: yes, we can apply more than one reference on single object if perform any changes on object then old content may be lost or override.
+Q. write a program create classname reverse with two value 
+Void setvalue(int no)
+Int getreverse()
+Ans:
+package corejavtechhub;
+import java.util.*;
+ class rev
+{
+	int no;
+	void setvalue(int no)
+	{
+		this.no=no;
+	}
+	int getreverse()
+	{ int r=0,rem;
+	while(no!=0)
+	{
+		rem=no%10;
+		no=no/10;
+		r=r*10+rem;
+	}
+	return r;
+	}
+}
+public class reverse
+{
+	public static void main(String[]args)
+	{
+		Scanner xyz=new Scanner(System.in);
+		rev ra=new rev();
+		System.out.println("enter number\n");
+		int no=xyz.nextInt();
+		ra.setvalue(no);
+		int result=ra.getreverse();
+		System.out.println("reverse is:   "+result);
+	}
+}
+
+Q. wap to create class name as percentage with two value
+ void setvalue() 
+void getper()
+Ans: 
+
+
+package corejavtechhub;
+import java.util.*;
+class percent
+{
+	int sub1,sub2,sub3,sub4,sub5;
+	void setvalue(int s1,int s2,int s3,int s4,int s5)
+	{
+		sub1=s1;
+		sub2=s2;
+		sub3=s3;
+		sub4=s4;
+		sub5=s5;		
+	}
+	int getpercent()
+	{
+		int agg=0;
+		agg=sub1+sub2+sub3+sub4+sub5;
+		return agg/5;
+	}
+}
+public class percentage 
+{
+	public static void main(String[] args) 
+	{   int s1,s2,s3,s4,s5;
+		Scanner xyz=new Scanner(System.in);
+	  percent p=new percent();
+	  System.out.println("enter subject mark\n");
+	  s1=xyz.nextInt();
+	  s2=xyz.nextInt();
+	  s3=xyz.nextInt();
+	  s4=xyz.nextInt();
+	  s5=xyz.nextInt();
+	  p.setvalue(s1,s2,s3,s4,s5);
+	  int result=p.getpercent();
+	  System.out.println("percentage is : "+result);
+	}
+}
+
+
+
+
+
+
+package corejavtechhub;
+import java.util.*;
+class percent
+{
+	int i,a[],agg=0;
+	void setvalue(int a[])
+	{
+		this.a=a;		
+	}
+	
+	int getpercent()
+	{
+		for(int i=0;i<a.length;i++)
+		{
+		agg=agg+a[i];
+		}
+		return agg/5;
+	}	
+}
+public class percentage 
+{
+	public static void main(String[] args) 
+	{   int a[]=new int[5];
+		Scanner xyz=new Scanner(System.in);
+	  percent p=new percent();
+	  System.out.println("enter subject mark\n");
+	  for(int i=0;i<a.length;i++)
+	  {
+		  a[i]=xyz.nextInt();
+	  }
+	  p.setvalue(a);
+	  int result=p.getpercent();
+	  System.out.println("percentage is : "+result);
+	}
+}
+
+
+Q. write a program to find max number with function 
+Void setvalue()
+Int getmax()
+Ans:
+
+
+package corejavtechhub;
+import java.util.*;
+class findmax
+{
+ int[] arr;
+ void setvalue(int a[])
+ {
+	 arr=a;
+ } 
+ int getmax()
+ {
+	 int max=arr[0];
+	 for(int i=0;i<arr.length;i++)
+	 {
+		 if(arr[i]>max)
+		 {
+			 max=arr[i];
+		 }
+	 }
+	 return max;
+ }
+}
+public class findmaxapplication 
+{
+	public static void main(String[] args) 
+	{   int a[]=new int[5];
+		Scanner xyz=new Scanner(System.in);
+		findmax f=new findmax();
+		System.out.println("enter value\n");
+		for(int i=0;i<a.length;i++)
+		{
+			a[i]=xyz.nextInt();
+		}
+		f.setvalue(a);
+		int max=f.getmax();
+		System.out.printf("max is  :  "+max);
+	}
+
+}
+
+
+Q. what is sorting?
+Ans: sorting is technique, with the help of sorting we can organize data in ascending or descending format.
+Types of sorting
+1.bubble sort: bubble sort is algorithm is simplest sorting algorithm that work by a repeatedly swapping the adjustment 
+We have array int a[]={5,2,4,9} and we want to arrange in ascending order.
+  package corejavtechhub;
+import java.util.*;
+class sort
+{
+	int arr[];
+	void setvalue(int arr[])
+	{
+		this.arr=arr;
+	}
+		
+	int[] sortArr()
+	{
+		for(int i=0;i<arr.length;i++)
+		 {
+			 for(int j=0;j<arr.length;j++)
+			 {
+				 if(arr[i]<arr[j])
+				 {
+				 int temp=arr[i];
+				 arr[i]=arr[j];
+				 arr[j]=temp;
+				 }
+			 }
+		 }
+		 return arr;
+		}
+	}
+
+public class bubblesort 
+{
+	public static void main(String[] args) 
+	{  int a[]=new int[5];
+	   sort s=new sort();
+		Scanner xyz=new Scanner(System.in);
+		System.out.println("enter array element\n");
+		for(int i=0;i<a.length;i++)
+		{
+			a[i]=xyz.nextInt();
+		}
+		s.setvalue(a);
+		int []result=s.sortArr();
+		System.out.println("display array\n");
+		for(int i=0;i<a.length;i++)
+		{
+			System.out.printf("%d\n",a[i]);
+		}
+	}
+}
+
+
+Q. selection sort?
+Ans: selected smallest and largest element from sorted and unsorted array.
+package corejavtechhub;
+
+import java.util.*;
+
+class selection 
+{
+	int a[];
+void acceptvalue(int arr[]) 
+	{
+		a = arr;
+	}
+void performselection() {
+		int i, j, min = 0, temp;
+		for (i = 0; i < (a.length - 1); i++)
+		{
+			for (j = i + 1; j < a.length; j++) 
+			{
+				if (a[i] < a[min])
+				{
+					min = j;
+				}
+			}
+			if (min!= i)
+			{
+				temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+
+	void printarray() {
+		for (int i = 0; i < a.length; i++) 
+		{
+			System.out.printf("%d", a[i]);
+		}
+	}
+}
+
+public class selectionsortapp {
+
+	public static void main(String[] args) {
+		int a[] = new int[5];
+		Scanner xyz = new Scanner(System.in);
+		System.out.println("enter  value\n");
+		for (int i = 0; i < a.length; i++)
+		{
+			a[i] = xyz.nextInt();
+		}
+		selection s = new selection();
+		s.acceptvalue(a);
+		s.performselection();
+		System.out.println("display array after sorting\n");
+		s.printarray();
+	}
+
+}
+
+
+Q. time complexity of analysis of selection sort.
+Time complexity of selection sort is o(n)^2 as there 2 nested loop one loop select smallest element of array .
+0(n) x 0(n)=0(n)^2
+Advantage of selection sort 
+1.simple and easy to understand
+2.work with small data set.
+Disadvantage 
+1.selection sort has time complexity is (0(nxn)) in the work case of average cast 
+2.does not work with large data.
+
+Merge sort : work by dividing on array into smaller sub array.
+Method with variable argument concept 
+Method with variable concept where we can pass infinite number of parameter to function 
+It is denoted by …(triple dot)
+package corejavtechhub;
+class sum
+{
+	int sum;
+	void sum(int...a)
+	{
+		for(int i=0;i<a.length;i++)
+		{
+			sum=sum+a[i];
+		}
+		System.out.printf("sum is %d",sum);
+	}
+}
+
+public class sumapp 
+{
+	public static void main(String[] args) 
+	{
+		sum s=new sum();
+		s.sum(10,20,30,40,60);
+
+	}
+
+}
+
+
+package wellman;
+import java.util.Scanner;
+
+class sum
+{ 
+int sum,a[];
+void sum(int...a)
+{
+	for(int i=0;i<a.length;i++)
+	{
+		sum=sum+a[i];
+	}
+	System.out.printf("sum is %d",sum);
+}
+}
+public class mergesort
+{ 
+	public static void main(String[]args)
+	{
+		int a[]=new int[3];
+		Scanner xyz=new Scanner(System.in);
+		System.out.println("enter number");
+		for(int i=0;i<a.length;i++)
+		{
+			a[i]=xyz.nextInt();
+		}
+		sum s=new sum();
+		s.sum(a);
+	}
+}
+
+
+
+
+
+
+
+package corejavtechhub;
+class sum
+{	int sum;
+	void sum(String name,int...a)
+	{
+		System.out.println("name is :"+name);
+		for(int i=0;i<a.length;i++)
+		{
+			sum=sum+a[i];
+		}
+		System.out.printf("sum is %d",sum);
+	}
+}
+public class sumapp 
+{
+	public static void main(String[] args) 
+	{
+		sum s=new sum();
+		s.sum("ram",10,20,30,40,60);
+	}
+}
+
+
+Q. POJO class :
+Pojo class means class with setter and getter method called as pojo class.
+package corejavtechhub;
+import java.util.*;
+class employee
+{
+	private int id;
+	private String name;
+	
+	public void setid(int id)
+	{
+		this.id=id;
+	}
+	public int getid()
+	{
+		return id;
+	}
+	public void setname(String name)
+	{
+		this.name=name;
+	}
+	public String getname()
+	{
+		return name;
+	}
+}
+
+public class pojoclass {
+
+	public static void main(String[] args) 
+	{
+		employee emp=new employee();
+		emp.setid(1);
+		emp.setname("amol");
+		System.out.println(emp.getid()+"\t"+emp.getname());
+	}
+
+}
+
+
+Q. create class name as player and field record as name id and run and create pojo class and store data in it and retrive data .
+Ans:
+package corejavtechhub;
+class player
+{
+	private int id;
+	private int run;
+	private String name;
+	public int getId() 
+	{
+		return id;
+	}
+	public void setId(int id) 
+	{
+		this.id = id;
+	}
+	public int getRun()
+	{
+		return run;
+	}
+	public void setRun(int run) 
+	{
+		this.run = run;
+	}
+	public String getName() 
+	{
+		return name;
+	}
+	public void setName(String name) 
+	{
+		this.name = name;
+	}
+}
+public class playerrecord
+{
+	public static void main(String[] args) 
+	{
+		player p=new player();
+		p.setId(1);
+		p.setName("amol");
+		p.setRun(100);
+		System.out.println("name is: "+p.getName());
+		System.out.println("id is: "+p.getId());
+		System.out.println("run is: "+p.getRun());		
+	}
+}
+
+
+Q. write a program to create a class name as company with two method void add employee(String name ,int id, String name)
+Void showdetail()
+Ans: 
+package corejavtechhub;
+class company
+{
+	private String name;
+	private int id;
+	private String address;
+	private int sal;
+	public void addemployee(int id,String name,String address,int sal)
+	{
+		this.id=id;
+		this.name=name;		
+		this.address=address;
+		this.sal=sal;
+	}
+	public void showdetail()
+	{
+		System.out.println(id+"\n"+name+"\n"+address+"\n"+sal);
+	}
+}
+public class companydetail 
+{
+
+	public static void main(String[] args) 
+	{
+	company c=new company();
+	c.addemployee(1,"Amol","hingoli",1500);
+	c.showdetail();
+	}
+
+}
+
+
+Q. write a program create class name as library with two method void addnewbook(String name, int price, String sub)
+Void display()
+package corejavtechhub;
+class library
+{
+	String name;
+	int price;
+	String sub;
+	void addbook(String name,int price,String sub)
+	{
+		this.name=name;
+		this.price=price;
+		this.sub=sub;
+	}
+	void displaybook()
+	{
+		System.out.println(name+"\t"+price+"\t"+sub);
+	}
+}
+public class libraryrecord 
+{
+	public static void main(String[] args) 
+	{	
+      library l=new library();
+      l.addbook("java", 100,"core");
+      l.displaybook();
+	}
+}
+
+Q. write a program create class name as sumevenodd and take method void setarr()
+And display sum of even and odd.
+Ans:
+package corejavtechhub;
+import java.util.*;
+class sumevenodd
+{
+	int a[];
+	public void setarr(int a[])
+	{
+		this.a=a;
+	}
+	int sumeven()
+	{
+		int sum=0;
+		for(int i=0;i<a.length;i++)
+		{
+			if(a[i]%2==0)
+			{
+				sum=sum+a[i];
+			}
+		}
+		return sum;
+	}
+	int sumodd()
+	{ int sum=0;	
+		for(int i=0;i<a.length;i++)
+		{ 
+			if(a[i]%2==1)
+			{
+				sum=sum+a[i];
+			}
+		}
+		return sum;
+	}	
+}
+public class evenodd
+{
+	public static void main(String[] args) 
+	{ int i;
+		Scanner xyz=new Scanner(System.in);
+		int a[]=new int[5];
+		System.out.println("enter value in array\n");
+		for( i=0;i<a.length;i++)
+		{
+			a[i]=xyz.nextInt();
+		}
+		sumevenodd s=new sumevenodd();
+		s.setarr(a);
+		int b=s.sumeven();
+		System.out.printf("sum of even is %d",b);
+		int c=s.sumodd();
+		System.out.printf("sum of odd is %d",c);
+	}
+}
+
+
+Q. write a program create class name as circle and show area of circle.
+Ans:
+package corejavtechhub;
+import java.util.*;
+class circle
+{
+	int no;
+	void setradius(int x )
+	{
+		no=x;
+	}
+	 void showarea()
+	 {
+	    float area=2*3.14f*no; 
+		System.out.println("area of circle is  "+area);
+	 }
+}
+public class circlearea 
+{
+	public static void main(String[] args) 
+	{
+		Scanner xyz=new Scanner(System.in);
+		System.out.println("enter radius\n");
+		int radius=xyz.nextInt();
+		circle c=new circle();
+		c.setradius(radius);
+		c.showarea();
+	}
+}
+
+Q. Static variable , local variable, instance variable?
+Ans: 
+1.static variable: 
+1.variable declare within class with static keyword called as static variable.
+2.static variable allocate its memory before creating its object of class.
+3.static variable access by using classname.membername . static variable access in static function as well as non-static function.
+4.life of static variable is present when application running in memory.
+2.Instance variable:
+1.variable declare within class without static keyword called as instance variable.
+2.instance variable allocate its memory after creating its object of class and store in object and object store in beap section of memory.
+3.instance variable access by using object.membername.
+4.instance variable share sepreate memory for object.
+Instance variable access in non-static function.
+5.life of instance variable when object is running in memory.
+
+Local variable:
+1.variable declare within function called as local variable.
+2.local variable allocate memory after calling function and store in stack section.
+3.acess local variable by calling function you cant access outside of his block.
+4.life of local variable is when function in execution.
+
+Q. what is garbage collection?
+Ans: garbage collection is automatic management technique of jvm which release or delete memory of object when object is not in use.
+Q. how JVM find object is not in use.
+Ans: when object not use any reference then JVM consider object not in use and JVM delete memory of that object.
+
+Q. array of object.
+Ans; array of object is used for store multiple object data in single name reference called as array of object.
+Classname ref[]=new classname[size];
+For(int i=0;i<ref.length;i++)
+{
+Ref[i]=new classname(); //array of object
+}
+
+
+
+
+
+Q. create classname as employee with field id name and salary and we want to create array of object of size 5 and store data in.
+Ans:
+package corejavtechhub;
+import java.util.*;
+class employeeapp
+{
+	private int id;
+	public int getId() 
+	{
+		return id;
+	}
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+	public String getName() 
+	{
+		return name;
+	}
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public int getSal() 
+	
+	{
+		return sal;
+	}
+	public void setSal(int sal) 
+	{
+		this.sal = sal;
+	}
+	private String name;
+	private int sal;
+}
+public class employeerecord 
+{
+	public static void main(String[] args) 
+	{ 
+	employeeapp e[]=new employeeapp[5];
+	Scanner xyz=new Scanner(System.in);
+	for(int i=0;i<e.length;i++)
+	{
+		e[i]=new employeeapp();
+		System.out.println("enter name id and sal\n");
+		String name=xyz.next();
+		int id=xyz.nextInt();
+		int sal=xyz.nextInt();
+		e[i].setName(name);
+		e[i].setId(id);
+		e[i].setSal(sal);		
+	}
+	System.out.println("display data\n");
+	for(int i=0;i<e.length;i++)
+	{
+		System.out.println(e[i].getName()+"\t"+e[i].getId()+"\t"+e[i].getSal());
+	}
+	}
+}
+
+
+Q. what is encapsulation?
+Ans; encapsulation means hide implementation detail from end user at implementation level called as encapsulation.
+Main goal of encapsulation is data security. When we declare class variable as private we cant access outside of his class .
+Q. what is constructor.
+Ans: constructor is same name as class name without return type.
+Syntax:
+ class classname
+{
+Classname()
+{ 
+Write 
+}
+Why use constructor ?
+Execute logic automatically when class object is created 
+Constructor call automatically when we create object of class.
+Q. types of constructor.
+Ans:  
+Default constructor : if we declare constructor without parameter called as default constructor. 
+Parameterized constructor : parameterized constructor means constructor with parameter called as parameterized constructor.  When we pass parameter to constructor then we need to pass parameter to object because constructor calling point is object.
+package corejavtechhub;
+import java.util.*;
+class squar
+{
+	int num;
+	void setsquar(int no)
+	{
+		this.num=no;
+	}
+	int getsquar()
+	{
+		return num*num;
+	}
+}
+public class squareno
+{
+	public static void main(String[] args) 
+	{
+	Scanner xyz=new Scanner(System.in);
+	System.out.println("enter number\n");
+	int no=xyz.nextInt();
+	squar s=new squar();
+	s.setsquar(no);
+	int result=s.getsquar();
+	System.out.println("square is "+result);
+	}
+}
+
+
+Q. write a program to create class name as findmin with parameterized constructor and take two method one is findmin(int a[]) and one is int getmin().
+Ans:
+package corejavtechhub;
+import java.util.*;
+class findmin
+{
+   private int a[];
+	public void findmin(int ar[])
+	{
+		this.a=ar;
+	}
+	public int getmin()
+	{
+		int min=a[0];
+		for(int i=0;i<a.length;i++)
+		{
+			if(a[i]<min)
+			{
+				min=a[i];
+			}
+		}
+		return min;
+		}
+}
+public class findminium 
+{
+	public static void main(String[] args) 
+	{ int a[]=new int[5];
+	findmin f=new findmin();
+	Scanner xyz=new Scanner(System.in);
+	System.out.println("enter value in array\n");
+	for(int i=0;i<a.length;i++)
+	{
+		a[i]=xyz.nextInt();
+	}
+	f.findmin(a);
+   int result=f.getmin();
+   System.out.println("min value is"+result);
+	}
+}
+
+
+
+Overloaded constructor: constructor overload means same name constructor with different parameter or different data types called as overloaded constructor. 
+package corejavtechhub;
+import java.util.*;
+class area
+{
+	 float radius;
+	 int len,wid;
+	
+	public void setcirclearea(float radius)
+	{
+		this.radius=radius;
+	}
+	public void setcirclearea(int len,int wid)
+	{
+		this.len=len;
+		this.wid=wid;
+	}
+	public float getcirclearea()
+	{
+		return (radius*radius*3.14f);
+	}
+	public int getrectaarea()
+	{
+		return len*wid;
+	}		
+}
+public class areaofcircle
+{
+	public static void main(String[]args)
+	{
+     Scanner xyz=new Scanner(System.in);
+     System.out.println("enter radius\n");
+     float radius=xyz.nextFloat();
+
+     area a=new area();
+     a.setcirclearea(radius);
+     a.getrectaarea();
+     float result=a.getcirclearea();
+     System.out.println("area of circle is\n"+result);
+     
+     System.out.println("enter len & wid");
+     int len=xyz.nextInt();
+     int wid=xyz.nextInt(); 
+     area a2=new area();
+     a2.setcirclearea(len,wid);
+     a2.getrectaarea();
+     int result2= a2.getrectaarea();
+    System.out.println("area of rectangle is "+result2);
+}
+}
+
+
+Copy constructor : 
+This constructor   : this constructor is used for constructor chaining in oop.
+Q. what is constructor chaining ?
+Ans:  constructor chaining means we can call one constructor within another constructor without creating its object .
+1.using this constructor 
+2.using super constructor.
+Constructor cant have a return type but we give return type then it is consider as method in java.
+Cant declare constructor as static in java 
+Class a
+{
+Public static a()
+{
+System.out.println(“I am method”);
+}
+}
+Class helloword
+{
+Public static void main(String []args)
+{
+A a1=new A();
+}
+} // above code generate compile time error because constructor has static.
+Q. why we cant declare constructor as static.
+Because constructor create its memory before creating its object of class and constructor cant call without object.
+Q. what is utility class ?
+Ans: utility class contain only static method and static method are public so it can accessible in program.
+When we want restrict utility class from object creation then we must be declaring constructor as private.
+Q. how we can create utility class in java?
+Ans: create constructor as private and define public static method.
+Q. what is single tone class?
+Ans: single tone class is design pattern and which allow to create object of class only once in application.
+Q. what is design pattern?
+Ans: design pattern represented the best practice used by experience object oriented software.
+Q. how to create single tone class in java?
+Ans: 
+1.declare class with private constructor 
+Class test
+{
+Private test()
+{}
+}
+2.declare reference of same class with private static and null
+Class test
+{
+Private static test t=null;
+Private test();
+{}
+}
+Q. what is difference between single tone and utility class 
+Ans: 
+          Single Tone	           Utility class 
+Single tone class create its object but only one copy of object	Utility class cant create its object its contain only static method
+	Class contain only static method and method are public
+
+Q. what is difference between constructor and method?
+Ans: 
+         constructor	         method
+Constructor has a same name as class name	Not compulsory function name and class name same 
+Constructor has not return type	Method have a return type
+Constructor call automatically when object created	Need to call manually
+Constructor cant declare as static	Function can declare static
+Constructor cant override 	Function can override
+Constructor cant declare as final	Function can declare as final
+Constructor cant be abstract	Method can abstract
+
+                             *****Inheritance*****
+Q. what is inheritance?
+Ans: inheritance means transfer property from one class to another class called as inheritance
+Why use inheritance and what is benefit of inheritance.
+1.reusablity: reusability means we can declare class only once and reuse it more than one time without creating its object.
+2.extensiblity: extensibility means child class acquire property from parent class and add its own property also called as extensibility.
+Class A                                   // Parent class
+{}
+Class b extends class A        // child class
+{}
+
+Q. why java provide object class as parent class to every class.
+Ans: object class contain some inbuilt method require to every class.
+1.int hashcode     2.boolean equal   3.String to String    4.void wait()
+5.void wait(int)   6.void notify()        7.void notify all()    8.Static block
+9.class get class   
+Q. how we can say java is pure object oriented ?
+Ans: cant create application without class 
+Cant create application without inheritance.
+Java is not pure object oriented because java support primitive data type static keyword and wrapper class
+Constructor in inheritance.
+Q. can we use super and this constructor at same time?
+Ans: No.
+Because super constructor and this constructor first line of calling constructor both constructor require first line 
+We cant use both constructor at same time
+Q. final keyword.
+Final keyword is non-access specifier in java we can use with  function and class
+1.final variable: final variable means once we assign value to variable you cant modify that value.
+Class hellowword
+{
+Public static void main(string args[])
+{
+Final int a=100;
+++a;
+System.out.println(“ a is %d”,a);
+}
+} // above code generate compile time error because we cant modifies value
+
+
+*Final class: final class means you cant inherit its class in another class , final class avoid inheritance.
+How we can avoid inheritance in java: we can avoid inheritance in java with the help of final keyword
+Final class a
+{}
+Class b extends a
+{}
+Class avoidinheritance
+{
+b b1=new b();
+}
+}
+Q. how we can avoid overriding in java and final method in java?
+Ans: final method means method cant override in child class 
+What is method overriding.
+Method overriding means define method In parent class and redefine method in child class called as method overriding.
+Q. why use method overriding and what is benefit of method overriding.
+Ans:
+1. to customized logic of parent class in child class
+2.To achieve dynamic polymorphism.
+
+Q. how we can avoid method overriding in java?
+Ans: declaring method as final we avoid method overriding in java.
+Important point related method overriding.
+Return type of parent class method and child class method must be same. 
+Q. method overloading?
+Ans: method overloading measn same method name and return type with different parameter or different parameter in parent class and child class called as method overloading.
+Q. how we can call parent logic in method overloading.
+Ans: using super keyword we can call parent logic in method overloading.
+
+Q. what is super?
+Ans: super is inbuilt reference which is present in every child class and which paint to parent class using super we can call parent logic.
+Q. can we override static method?
+Ans: No we cant override static method in child class .
+Because Static method is used for method hiding purpose.
+package corejavtechhub;
+class M
+{
+	public static void show()
+	{
+	System.out.println("i am A");
+	}
+}
+class N
+{
+	public static void show()
+	{
+	System.out.println("i am B");
+	}
+}
+public class inheritanceapp 
+{
+	public static void main(String[] args) 
+	{
+		N n=new N();
+		n.show();
+	}
+}
+
+ Output : I am B
+Q. what is method hiding?
+Ans: when we create reference of parent class and object of child class and call overridden method using parent reference then parent logic get executed not child logic.
+package corejavtechhub;
+class M
+{
+	public static void show()
+	{
+	System.out.println("i am A");
+	}
+}
+class N extends M
+{
+	public static void show()
+	{
+	System.out.println("i am B");
+	}
+}
+public class inheritanceapp 
+{
+	public static void main(String[] args) 
+	{
+		M m=new N();
+		m.show();
+	}
+}
+
+
+Q. what is difference between overloading and overriding?
+Ans: 
+        overloading	            overriding
+Overloading is  compile time polymorphism	Overriding is runtime polymorphism
+We can perform overloading with same class not required inheritance	Inheritance is mandatory In overriding
+In overloading method name must be same with different syntax, we can pass different type of data or different type of parameter 	In overriding method name syntax must be same return type parameter same
+Poor performance due to compile time polymorphism	Better performance due to run time polymorphism
+Private and final method can be overload	Private and final method cant be overload
+
+Q. what is abstraction?
+Ans: hiding information from end user at design level called as abstraction.
+Q. how we can achieve abstraction in java?
+Ans:
+ 1.by using abstract class and abstract method.
+2.by using interface.
+
+
+Q. what is abstract class and abstract method?
+Ans: abstract class means class cant create its object, and abstract method means method cant have logic.
+How to declare abstract class and abstract method in java.
+Abstract class classname
+{  Abstract return type functionname(argument);
+}
+
+Abstract class vehicle
+{  Abstract void engine()
+}
+Public class interface
+{  Public static void main(String []args)
+{  Vehicle v=new vehicle();
+}
+}
+Q. why use abstract class and abstract method?
+Ans: 1. Achieve abstraction   2. achieve dynamic polymorphism.
+If we want to write any logic of abstract method we need to override abstract method and its child class and create object of child class and call it
+
+If we have abstract method in class then class must be abstract, we cant use abstract method in non-abstract class. If class declare as abstract then we cant create its object. If we create then generate compile time error.
+Q. why we cant create object of abstract class.
+Ans: because abstract class contain abstract method, abstract method cant have logic.
+ If we cant create object of abstract class then how constructor get executed. 
+Abstract class contain non abstract method we need override non-abstract method in abstract child class , if we create object of child class then constructor get executed.
+
+Q. what is major use of declare constructor in abstract class.
+Ans: 
+
+Q. can we use abstract keyword with variable?
+Ans: No . because major goal of abstract keyword is achieve abstraction, method not use variable.
+
+Q. can we declare method as final?
+Ans: No. because final method cant override in child class and abstract method must be override in child class. Id declare as final then generate compile time error. 
+Q. can we declare abstract method as static ?
+Ans: No. because static keyword work with compile time polymorphism. And abstract method work with runtime polymorphism.
+Q. can we declare abstract method as final?
+Ans: No. because private method cant override and not support inheritance.
+
+Q. can we declare abstract method as private?
+Ans: No. because private member cant support to inheritance and method overriding 
+Q. can we declare as abstract method as protected ?
+Ans: yes , we can declare abstract method as protected ,protected help us to override in child class 
+Abstract class vehicle 
+{
+Protected abstract void engine();
+}
+Class bike extends vehicle 
+{
+Protected void engine()
+{
+System.out.pritnln(“I am bike”);
+}
+}
+
+Use adapter class 
+Q. what is adapter class?
+Ans: abstract class is design pattern which is use for cover the limitation of abstract class abstract method.
+ adapter is intermediate class which contain all blank method of abstract class called as adapter.
+
+Q. why we need to create reference of abstract class or what is benefit of abstract class reference?
+Ans: to achieve dynamic polymorphism and loose coupling we can use abstract class reference.
+
+Q. dynamic polymorphism ?
+Ans: dynamic polymorphism means object bounded with functionality at program run time called as dynamic polymorphism.
+package wellman;
+abstract class value
+{
+	int a,b;
+	void setvalue(int x,int y)
+	{
+		a=x;
+		b=y;
+	}
+	abstract int getresult();
+}
+
+class addition extends value
+{
+	public int getresult()
+	{
+		return a+b;
+	}
+}
+
+class mul extends value
+{
+	public int getresult()
+	{
+		return a*b;
+	}
+}
+
+public class calculator
+{
+
+	public static void main(String[] args)
+	{	
+		value v;
+		v=new addition();
+		v.setvalue(10,20);
+		int result=v.getresult();
+		System.out.println("addition is :" +result);
+	
+		v=new mul();
+		v.setvalue(2,3);
+		int result1=v.getresult();
+		System.out.println("addition is :" +result1);
+	}
+}
+
+
+Q. What is coupling ?
+Ans: coupling method of particular class is dependent on particular parameter called as coupling.
+There are two type of coupling 
+Tight coupling : method of particular class  is 100% dependent on another class object called as tight coupling.
+Loose coupling : loose coupling means method of particular class is partially dependent on another class object called as loose coupling 
+
+Interface
+ Q. What is interface ?
+Ans: interface is same like as abstract class in java.
+
+Q. Why use interface if we have abstract class
+Ans: 
+to achieve multiple inheritance 
+Achieve 100% abstraction
+Achieve dynamic polymorphism
+ Q. why java not use classes for multiple inheritance implementation 
+Ans: because diamond problem 
+Q. what Is diamond problem?
+Ans: diamond problem means in multiple inheritance more than one parent class and single child class if we create object of child class and call to parent class then compiler confused  called as diamond problem.
+Class A               class b              class c
+
+                            Class d 
+D d=new D();
+d.show();
+
+
+Q. how to work with interface?
+Ans: declare keyword as interface.
+Syntax: interface interfacename 
+{return type functionname(datatype variblename)
+}
+Ex: interface ABC 
+{
+Void show();
+}
+Note : interface method cant have logic because they are by default public and abstract and interface cant create its object because it is internally abstract.
+
+package wellman;
+interface abc
+{
+	void show() ;
+}
+class mno implements abc
+{
+	@Override
+	public void show() 
+	{
+		System.out.println("i am show");		
+	}	
+}
+public class interfac 
+{
+	public static void main(String[] args)
+	{
+	mno m=new mno();
+	m.show();
+	}
+}
+
+
+ Importance point related to interface 
+Interface cant create its object 
+Interface method are by default public and abstract 
+Interface variable are public and final 
+Q. why interface variable are declare as public static final ?
+Ans: because interface cant create its object so if we want to use interface variable without object then we can use it by using interface name so it is declare as static.
+
+We cant declare interface method as final  : if we declare as final then we cant override it 
+We cant declare as interface method as static : static method use for achieve compile time polymorphism and interface method is use for achieve dynamic polymorphism.
+
+Q. Can we declare as interface methos as protected ?
+Ans: no we cant declare as interface method as protected ,if we declare abstract method in abstract class then we can declare it.
+Q. it is compulsory to override interface method as public ?
+Ans: yes.
+Note : perform inheritance between interface to interface then use extends keyword.
+package wellman;
+interface abc
+{
+	void show() ;
+}
+
+interface xyz extends abc
+{
+	void display();
+}
+class mno implements abc
+{
+	@Override
+	public void show() 
+	{
+		System.out.println("i am show");		
+	}	
+}
+public class interfac 
+{
+	public static void main(String[] args)
+	{
+	mno m=new mno();
+	m.show();
+	}
+}
+
+
+Interface to class use implements keywords
+Class to class use extends keyword 
+Class to interface not allow in java.
+Note : if interface contain more than one method then override all method where interface get implement.
+package wellman;
+interface abc
+{
+	void show() ;
+	void display();
+}
+
+class mno implements abc
+{
+	@Override
+	public void show() 
+	{
+		System.out.println("i am show");		
+	}
+	@Override
+	public void display()
+	{		
+	}	
+}
+public class interfac 
+{
+	public static void main(String[] args)
+	{
+	mno m=new mno();
+	m.show();
+	}
+}
+
+
+Use adapter class : adapter class contain all blank method of interface.
+Which is capable for provide specific method to child class.
+package wellman;
+interface ijk
+{
+	void show();
+	void display();
+}
+class adp implements ijk
+{
+	@Override
+	public void show() 
+	{		
+	}
+
+	@Override
+	public void display() 
+	{		
+	}	
+}
+
+class xyz extends adp
+{
+	public void show()
+	{
+	System.out.println("i am show");
+	}
+}
+
+public class adapter 
+{
+	public static void main(String[] args)
+	{		
+xyz x=new xyz();
+x.show();
+	}
+}
+
+
+Note : we cant create object of interface but we cant create reference of interface 
+Then we can create object of implementer class 
+package wellman;
+
+interface pqr
+{
+	void show();
+}
+ 
+class def implements pqr
+{
+	@Override
+	public void show() 
+	{	
+		System.out.println("amol");
+	}	
+}
+public class adapter 
+{
+	public static void main(String[] args)
+	{		
+pqr p=new def();
+p.show();
+	}
+}
+
+
+Q. What is purpose of interface reference ?
+Ans: major goal of interface reference is achieve dynamic polymorphism.
+Q. How to achieve multiple inheritance using interface 
+Ans: for achieve multiple inheritance using interface for that one base class and one child class and more than one parent interface.
+Interface interface1 
+{
+} 
+Interface interface2 
+{
+}
+Class parentclass name 
+{
+}
+Child classname extends parentclassname implements interface1, interface2
+{
+}
+Q. what is difference between abstract class and interface?
+Ans: 
+Abstract class is use for achieve partial abstraction	Interface is use for achieve 100% abstraction
+Abstract keyword is use for declare abstract class	Interface is by default abstract class
+Abstract class contain non-abstract method 	In interface every method is by default public and abstract
+Abstract method is not public 	Interface method is by default public 
+Abstract class cant support multiple inheritance 	Interface support multiple inheritance 
+
+EXCEPTION HANDLING
+Q. what is exception handling?
+Ans: exception is event which occur at program run time which is responsible for disturb normal flow of application. 
+
+
+

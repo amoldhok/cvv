@@ -1,0 +1,41 @@
+package com.example.demo.controller;
+
+import javax.security.auth.Subject;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.yaml.snakeyaml.error.Mark;
+
+import com.example.demo.model.Student;
+import com.example.demo.service.StudentService;
+
+public class StudentController
+{
+	@Autowired
+	StudentService studentService;
+
+	@Autowired
+	SubjectService subjectService;
+
+	@Autowired
+	MarkService markService;
+
+	@GetMapping("/student")
+	public Student saveStudent(@RequestBody Student student) {
+		return studentService.saveStudent(student);
+	}
+
+	@GetMapping("/subject")
+	public Subject saveSubject(@RequestBody Subject subject) {
+		return subjectService.saveSubject(subject);
+	}
+
+	@GetMapping("/mark")
+
+	public Mark saveMarks(@RequestBody Mark mark) {
+		return markService.saveMarks(mark);
+	}
+
+}
+

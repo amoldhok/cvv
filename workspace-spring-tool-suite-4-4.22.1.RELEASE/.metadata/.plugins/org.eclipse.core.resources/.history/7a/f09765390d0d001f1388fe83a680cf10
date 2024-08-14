@@ -1,0 +1,19 @@
+package com.example.demo.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.repository.AdminRepository;
+import com.example.demo.repository.MarkRepository;
+import com.example.demo.repository.StudentRepository;
+import com.example.demo.repository.SubjectRepository;
+
+@Service("studService")
+public class StudentService 
+{
+	AdminRepository adrepo;
+	StudentRepository studrepo;
+	MarkRepository markrepo;
+	SubjectRepository subrepo;
+	
+
+}

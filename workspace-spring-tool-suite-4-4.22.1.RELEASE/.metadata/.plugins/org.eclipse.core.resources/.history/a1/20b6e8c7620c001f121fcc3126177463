@@ -1,0 +1,64 @@
+package com.example.demo.service;
+import java.util.List;
+
+import org.apache.catalina.startup.ClassLoaderFactory.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.Student;
+import com.example.demo.model.Student;
+import com.example.demo.model.Subject;
+import com.example.demo.model.Subject;
+import com.example.demo.repository.StudentRepository;
+
+import ch.qos.logback.core.model.Model;
+
+	@Service("studService")
+	public class StudentService {
+		@Autowired 
+		Repository adrepo;
+		
+		
+		@Autowired
+		StudentRepository studRepo;
+		
+		public boolean fetchAdmindata() {
+			return false;
+		}
+		
+		
+		public boolean isSaveAdmin(Model model) 
+		{
+			 
+			Model am=adrepo.save(model);
+			return am!=null?true:false;
+		}
+		
+		
+		public List<Model> fetchAdminData(Model model) {
+		 List<Model>list =((Object) adrepo).findAll();
+		 
+			return list;
+		}
+
+
+		public List<Student> viewAllStudent(Student model) {
+			List<Student>list=studRepo.findAll();
+			return list;
+			
+			
+		}
+
+
+		public boolean isSaveStudent(Student stm) 
+		{			Student sm=((Object) studRepo).save(stm);
+			return sm!=null?true:false;
+			
+		}
+		
+		public boolean isSaveSubject(Subject submodel) 
+		{
+			return false;			
+		}
+	}
+
